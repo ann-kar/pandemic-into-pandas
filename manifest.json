@@ -1,0 +1,27 @@
+{
+  "name": "Mniej pandemii, więcej pand",
+  "description": "Wtyczka, która zamienia newsy na temat pandemii w informacje o pandach - ze zdjęciami.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "options_page": "popup.html",
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/panda16white.png",
+      "32": "assets/panda32white.png",
+      "128": "assets/panda128white.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs", "storage"]
+}
